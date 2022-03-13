@@ -12,6 +12,7 @@ use AipBase;
  * @method static \AipNlp           nlp(array $config)
  * @method static \AipFace          face(array $config)
  * @method static \AipSpeech        speech(array $config)
+ * @method static \AipTranslation   translation(array $config)
  * @method static \AipImageCensor   imageCensor(array $config)
  * @method static \AipImageSearch   imageSearch(array $config)
  * @method static \AipImageClassify imageClassify(array $config)

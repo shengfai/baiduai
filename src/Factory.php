@@ -2,22 +2,22 @@
 
 namespace Shengfai\BaiduAi;
 
-use AipBase;
+use Shengfai\BaiduAi\Util\AipBase;
 
 /**
  * Class Factory
  *
- * @method static \AipKg            kg(array $config)
- * @method static \AipOcr           ocr(array $config)
- * @method static \AipNlp           nlp(array $config)
- * @method static \AipFace          face(array $config)
- * @method static \AipSpeech        speech(array $config)
- * @method static \AipTranslation   translation(array $config)
- * @method static \AipImageCensor   imageCensor(array $config)
- * @method static \AipImageSearch   imageSearch(array $config)
- * @method static \AipImageClassify imageClassify(array $config)
- * @method static \AipBodyAnalysis  bodyAnalysis(array $config)
- * @method static \AipContentCensor contentCensor(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipKg            kg(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipOcr           ocr(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipNlp           nlp(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipFace          face(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipSpeech        speech(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipTranslation   translation(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipImageCensor   imageCensor(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipImageSearch   imageSearch(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipImageClassify imageClassify(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipBodyAnalysis  bodyAnalysis(array $config)
+ * @method static \Shengfai\BaiduAi\Client\AipContentCensor contentCensor(array $config)
  */
 class Factory
 {

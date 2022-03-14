@@ -91,7 +91,7 @@ class AipHttpClient
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($data) ? http_build_query($data) : $data);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($data) ? json_encode($data) : $data);
         curl_setopt($ch, CURLOPT_TIMEOUT_MS, $this->socketTimeout);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, $this->connectTimeout);
         $content = curl_exec($ch);
@@ -135,7 +135,7 @@ class AipHttpClient
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($data) ? http_build_query($data) : $data);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($data) ? json_encode($data) : $data);
             curl_setopt($ch, CURLOPT_TIMEOUT_MS, $this->socketTimeout);
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, $this->connectTimeout);
             curl_multi_add_handle($mh, $ch);

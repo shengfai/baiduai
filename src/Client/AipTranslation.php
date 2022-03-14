@@ -18,39 +18,12 @@ class AipTranslation extends AipBase
     public $texttransUrl = 'https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1';
 
     /**
-     * 处理请求参数
-     *
-     * @param string $url
-     * @param array $params
-     * @param array $data
-     * @param array $headers
-     * @return void
-     */
-    protected function proccessRequest(string $url, array &$params, array &$data, array $headers): void
-    {
-        $token = isset($params['access_token']) ? $params['access_token'] : '';
-
-        if (empty($data['cuid'])) {
-            $data['cuid'] = md5($token);
-        }
-
-        if ($url === $this->asrUrl) {
-            $data['token'] = $token;
-            $data = json_encode($data);
-        } else {
-            $data['tok'] = $token;
-        }
-
-        unset($params['access_token']);
-    }
-
-    /**
      * 格式化结果
      *
      * @param $content string
      * @return mixed
      */
-    protected function proccessResult(string $content): mixed
+    protected function proccessResult(string $content)
     {
         $obj = json_decode($content, true);
 
@@ -74,15 +47,13 @@ class AipTranslation extends AipBase
      */
     public function texttrans(string $from, string $to, string $q, array $termIds = []): array
     {
-        $data = [];
-
-        $data = json_encode([
+        $data = [
             'from' => $from,
             'to' => $to,
             'q' => $q,
-            'termIds' => $termIds,
-        ]);
+            'termIds' => implode(',', $termIds),
+        ];
 
-        return $this->request($this->texttransUrl, $data, []);
+        return $this->request($this->texttransUrl, $data);
     }
 }

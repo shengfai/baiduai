@@ -27,7 +27,7 @@ class Factory
      */
     public static function make(string $name, array $config)
     {
-        $application = 'Aip' . ucfirst($name);
+        $application = '\Shengfai\BaiduAi\Client\Aip' . ucfirst($name);
 
         $client = new $application($config['appid'], $config['access_key'], $config['access_secret']);
         $client->setConnectionTimeoutInMillis($config['timeout']);

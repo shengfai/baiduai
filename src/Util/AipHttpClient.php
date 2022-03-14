@@ -2,7 +2,6 @@
 
 namespace Shengfai\BaiduAi\Util;
 
-use CurlHandle;
 use Exception;
 
 /**
@@ -60,10 +59,10 @@ class AipHttpClient
     /**
      * 请求预处理
      *
-     * @param CurlHandle $ch
+     * @param resource $ch
      * @return void
      */
-    public function prepare(CurlHandle $ch)
+    public function prepare($ch)
     {
         foreach ($this->conf as $key => $value) {
             curl_setopt($ch, $key, $value);
@@ -176,6 +175,7 @@ class AipHttpClient
         $headers = array_merge($this->headers, $this->buildHeaders($headers));
 
         $ch = curl_init();
+
         $this->prepare($ch);
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HEADER, false);

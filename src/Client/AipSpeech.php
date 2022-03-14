@@ -68,7 +68,7 @@ class AipSpeech extends AipBase
      * @param $content string
      * @return mixed
      */
-    protected function proccessResult(string $content): mixed
+    protected function proccessResult(string $content)
     {
         $obj = json_decode($content, true);
 

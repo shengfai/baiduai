@@ -111,7 +111,7 @@ class AipNlp extends AipBase
      * @param string $content
      * @return mixed
      */
-    protected function proccessResult(string $content): mixed
+    protected function proccessResult(string $content)
     {
         return json_decode(mb_convert_encoding($content, 'UTF8', 'GBK'), true, 512, JSON_BIGINT_AS_STRING);
     }

@@ -159,6 +159,7 @@ class AipBase
             $this->proccessRequest($url, $params, $data, $headers);
 
             $headers = $this->getAuthHeaders('POST', $url, $params, $headers);
+
             $response = $this->client->post($url, $data, $params, $headers);
 
             $obj = $this->proccessResult($response['content']);
@@ -255,7 +256,7 @@ class AipBase
      * @param string $content
      * @return mixed
      */
-    protected function proccessResult(string $content): mixed
+    protected function proccessResult(string $content)
     {
         return json_decode($content, true);
     }

@@ -24,9 +24,8 @@ class Factory
     /**
      * @param string $name
      * @param array $config
-     * @return AipBase
      */
-    public static function make(string $name, array $config): AipBase
+    public static function make(string $name, array $config)
     {
         $application = 'Aip' . ucfirst($name);
 

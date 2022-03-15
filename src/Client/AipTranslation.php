@@ -27,9 +27,10 @@ class AipTranslation extends AipBase
     {
         $obj = json_decode($content, true);
 
-        if ($obj === null) {
-            $obj = [
-                '__json_decode_error' => $content
+        if (!isset($obj['error_code'])) {
+            return [
+                'log_id' => $obj['log_id'],
+                'result' => $obj['result']['trans_result']
             ];
         }
 

@@ -123,11 +123,11 @@ class AipBase
      *
      * @param string $url
      * @param array $params
-     * @param array $data
+     * @param mixed $data
      * @param array $headers
      * @return void
      */
-    protected function proccessRequest(string $url, array &$params, array &$data, array $headers)
+    protected function proccessRequest(string $url, array &$params, &$data, array $headers)
     {
         $params['aipSdk'] = 'php';
         $params['aipSdkVersion'] = $this->version;
@@ -242,10 +242,10 @@ class AipBase
      * 格式检查
      *
      * @param string $url
-     * @param array $data
+     * @param mixed $data
      * @return boolean
      */
-    protected function validate(string $url, array &$data): bool
+    protected function validate(string $url, &$data): bool
     {
         return true;
     }

@@ -73,12 +73,12 @@ class AipHttpClient
      * 发送Post请求
      *
      * @param  string $url
-     * @param  array $data HTTP POST BODY
+     * @param  mixed $data HTTP POST BODY
      * @param  array $param HTTP URL
      * @param  array $headers HTTP header
      * @return array
      */
-    public function post(string $url, array $data = [], array $params = [], array $headers = []): array
+    public function post(string $url, $data = [], array $params = [], array $headers = []): array
     {
         $url = $this->buildUrl($url, $params);
         $headers = array_merge($this->headers, $this->buildHeaders($headers));
@@ -112,12 +112,12 @@ class AipHttpClient
      * 发送多个Post请求
      *
      * @param  string $url
-     * @param  array $datas HTTP POST BODY
+     * @param  mixed $datas HTTP POST BODY
      * @param  array $param HTTP URL
      * @param  array $headers HTTP header
      * @return array
      */
-    public function multi_post(string $url, array $datas = [], array $params = [], array $headers = []): array
+    public function multi_post(string $url, $datas = [], array $params = [], array $headers = []): array
     {
         $url = $this->buildUrl($url, $params);
         $headers = array_merge($this->headers, $this->buildHeaders($headers));
